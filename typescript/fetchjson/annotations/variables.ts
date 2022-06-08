@@ -48,3 +48,13 @@ const logNumber: (i: number) => void = (i) => {
 const json = '{ "x": 10, "y": 20 }'
 const coordinates: { x: number; y: number } = JSON.parse(json)
 console.log(coordinates)
+
+// 3) variable whose type cannot be inferred correctly
+let numbers = [-10, -1, 12]
+let numberAboveZero: boolean | number = false
+
+for (let i = 0; i < numbers.length; i++) {
+    if (numbers[i] > 0) {
+        numberAboveZero = numbers[i]
+    }
+}
